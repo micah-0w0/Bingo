@@ -3,6 +3,8 @@
 
 A web‑based Bingo game runner built with Flask
 
+https://cs50.harvard.edu/certificates/db23d22b-9868-4d44-acf4-9470fe6b60e9
+
 #### Overview
 This project is a fully interactive **Bingo game runner** built using **Flask**, designed to simulate the experience of hosting and playing a live Bingo game through the browser. The application handles number generation, game state management, and player interaction, providing a clean and responsive interface for both hosts and participants.
 
@@ -34,33 +36,33 @@ First, the user can choose to start a new game or join a running game. A new gam
 
 #### File Structure
 README.md<br>
-bingo/
-├── requirements.txt
-├── bingo.py (This is where all of the main Flask functionality lies.)
-├── bingo.db (This database stores information about running games, numbers, and boards.)
-├── static/
-│   ├── styles.css (This holds all of the styling for the web pages/templates.)
-│   ├── script.js (This handles functions like sound playing.)
-│   ├── pictures/ (Holds themed bingo pictures and image credits)
-│   │   ├── bingo-pic1.jpg
-│   │   ├── bingo-pic2.jpg
-│   │   └── picture-credits.txt (Credits for images)
-│   └── sounds/ (Holds sound effects and sound credits)
-│       ├── ball-roll-sound.mp3
-│       ├── tap-sound.mp3
-│       ├── winner.mp3
-│       └── sound-credits.txt (Credits for sounds)
-├── templates/
-│   ├── layout.html (This is a template that other templates build off of.)
-│   ├── index.html (This page is for when a user first visits the website.)
-│   ├── join.html (This page is for a user entering a session ID to join a bingo game.)
-│   ├── invalidjoin.hmtl (This page shows a message for an invalid game id that was entered.)
-│   ├── baller.html (This page is for a user running a bingo game and rolling numbers.)
-│   ├── board.html (This page is for a someone playing bingo.)
-│   └── status.html (This page reveals whether the entered user has a winning bingo board or not.)
-└── tests/
-    ├── Test Pic
-    └── Test Pic...
+bingo/<br>
+├── requirements.txt<br>
+├── bingo.py (This is where all of the main Flask functionality lies.)<br>
+├── bingo.db (This database stores information about running games, numbers, and boards.)<br>
+├── static/<br>
+│   ├── styles.css (This holds all of the styling for the web pages/templates.)<br>
+│   ├── script.js (This handles functions like sound playing.)<br>
+│   ├── pictures/ (Holds themed bingo pictures and image credits)<br>
+│   │   ├── bingo-pic1.jpg<br>
+│   │   ├── bingo-pic2.jpg<br>
+│   │   └── picture-credits.txt (Credits for images)<br>
+│   └── sounds/ (Holds sound effects and sound credits)<br>
+│       ├── ball-roll-sound.mp3<br>
+│       ├── tap-sound.mp3<br>
+│       ├── winner.mp3<br>
+│       └── sound-credits.txt (Credits for sounds)<br>
+├── templates/<br>
+│   ├── layout.html (This is a template that other templates build off of.)<br>
+│   ├── index.html (This page is for when a user first visits the website.)<br>
+│   ├── join.html (This page is for a user entering a session ID to join a bingo game.)<br>
+│   ├── invalidjoin.hmtl (This page shows a message for an invalid game id that was entered.)<br>
+│   ├── baller.html (This page is for a user running a bingo game and rolling numbers.)<br>
+│   ├── board.html (This page is for a someone playing bingo.)<br>
+│   └── status.html (This page reveals whether the entered user has a winning bingo board or not.)<br>
+└── tests/<br>
+    ├── Test Pic<br>
+    └── Test Pic...<br>
 
 #### Development Process
 ##### Brainstorming
