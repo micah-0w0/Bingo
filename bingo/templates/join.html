@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Join a Game
+{% endblock %}
+
+{% block main %}
+    <h2>Enter your session ID below to join your bingo game.</h2>
+    <form action="/join" method="POST">
+        <input id="session-input" name="game_id" placeholder="Enter Session ID" required>
+        <button id="session-submit">Enter Game!</button>
+    </form>
+{% endblock %}

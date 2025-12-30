@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Status
+{% endblock %}
+
+{% block main %}
+    <h2>{{ message }}</h2>
+    <p>Redirecting in {{ delay }} seconds...</p>
+    {% if play_sound %}
+        <audio id="winner" src="{{ url_for('static', filename='sounds/winner.mp3') }}">
+        </audio>
+    {% endif %}
+
+    <script>
+        const sound = document.getElementById("winner");
+        sound.currentTime = 0;
+        sound.play();
+        setTimeout(() => {
+            window.location.href = "{{ redirect_url }}";
+        }, {{ delay }} * 1000);
+    </script>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Board ID: {{ board_id }}
+{% endblock %}
+
+{% block main %}
+    <div class="board-screen">
+        <h1>BINGO</h1>
+        <table class="bingo-board">
+            <tr>
+                {% for column in bingo.keys() %}
+                    <th>{{ column }}</th>
+                {% endfor %}
+            </tr>
+
+        {# Find the longest column length #}
+            {% set max_len = bingo.values() | map('length') | max %}
+
+        {# Render rows #}
+            {% for i in range(max_len) %}
+                <tr>
+                    {% for column, numbers in bingo.items() %}
+                        <td class="not-selected">
+                            {{ numbers[i] if i < numbers|length else "" }}
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+        <div class="game-details">
+            <h6>Player ID: {{ player_id }}</h6>
+            <h6>Board ID: {{ board_id }}</h6>
+        </div>
+        <button id="bingo-button">BINGO!</button>
+
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <span id="closePopup" class="close">&times;</span>
+
+                <h2>Congrats!</h2>
+                <p>Please show this info to your game host:</p>
+
+                <p><strong>Player ID:</strong> {{ player_id }}</p>
+                <p><strong>Board ID:</strong> {{ board_id }}</p>
+            </div>
+        </div>
+
+        <audio id="tap_sound" src="{{ url_for('static', filename='sounds/tap-sound.mp3') }}">
+        </div>
+{% endblock %}

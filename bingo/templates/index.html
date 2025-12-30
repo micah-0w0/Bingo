@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Start a Game
+{% endblock %}
+
+{% block main %}
+    <div class="opening-page">
+        <h1 class="welcome">Welcome to Bingo!</h1>
+        {% if session["game_id"] %}
+            <div class="announcement">
+                <p>You have a <a id="rejoin-game" href="/rejoin">game</a> currently running <a id="game-here" href="/rejoin">here</a>. <a id="reset-game" href="/reset">Start a new game?</a></p>
+            </div>
+        {% endif %}
+        <div class="enter-buttons">
+            <a class="enter-button" href="/baller">
+                <div>
+                    <h3>Start a New Game</h3>
+                    <img id="pic1" alt="A picture of people having fun" src="static/pictures/bingo-pic1.jpg">
+                </div>
+            </a>
+            <a class="enter-button" href="/join">
+                <div>
+                    <h3>Join a Game</h3>
+                    <img id="pic2" alt="A picture a smiling person" src="static/pictures/bingo-pic2.jpg">
+                </div>
+            </a>
+        </div>
+    </div>
+{% endblock %}

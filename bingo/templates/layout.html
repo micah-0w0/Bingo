@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bingo: {% block title %}{% endblock %}</title>
+
+        <!-- Stylesheet -->
+        <link href="static/styles.css" rel="stylesheet">
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=BBH+Hegarty&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <nav>
+            <a class="navbar-brand" href="/">Bingo!</a></p>
+        <div class="navbar-links">
+            {% if session["game_id"] %}
+                {% if page == "index" or page == "join" %}
+                    <a class="navbar-link" href="/rejoin">Join Current Game</a>
+                {% else %}
+                    <a id="game-reset" href="/reset">Reset Balls: Start a New Game</a>
+                {% endif %}
+            {% else %}
+                <a class="navbar-link" href="/">Start a New Game</a>
+                <a class="navbar-link" href="/join">Join a Game</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <main>
+        {% block main %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <div class="credits">
+            <h5>Created by <a href="https://github.com/micah-0w0">micah-0w0</a></h5>
+            <h5>Watch the demo here: <a href="https://youtu.be/I6oPhlRx0zg">YouTube Demo Link</a></h5>
+        </div>
+    </footer>
+
+    <script src="static/script.js"></script>
+</body>
+
+</html>

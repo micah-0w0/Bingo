@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Roll Numbers
+{% endblock %}
+
+{% block main %}
+    <div class="session-header">
+        <h2>Bingo Ball Roller!</h2>
+        <h3>Game ID: {{ game_id }}</h3>
+    </div>
+    <div class="ball-main">
+        <div class="ball-section">
+            <div class="ball">
+                <h1 class="ball-number">{{current_ball}}</h1>
+            </div>
+            <h3>Ball: {{ ball_count }}</h3>
+            <button id="roll-button" onclick="ballRoll()">Roll a Ball!</button>
+            <audio id="roll_sound" src="{{ url_for('static', filename='sounds/ball-roll-sound.mp3') }}">
+            </audio>
+        </div>
+        <div class="previous-numbers">
+            <h4>Previous Numbers:</h4>
+            <p class="numbers">{{ numbers_csv }}</p>
+            <button id="check-button" onclick="openCheckPopup()">Check Numbers</button>
+
+            <div id="checkModal" class="modal">
+                <div class="modal-content">
+                    <h2>Check Your Board</h2>
+
+                    <form id="checkForm">
+                        <label>Player ID</label>
+                        <input type="text" id="playerInput" required>
+
+                        <label>Board ID</label>
+                        <input type="text" id="boardInput" required>
+
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

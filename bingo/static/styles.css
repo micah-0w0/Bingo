@@ -1,0 +1,397 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-color: #CAFF8A;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    text-align: center;
+    font-family: "BBH Hegarty";
+    letter-spacing: 1px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+/* NAV */
+nav {
+    background-color: #D8FEAB;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+nav .navbar-brand {
+    /* left side */
+}
+
+nav .navbar-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+nav a {
+    letter-spacing: 0.2px;
+}
+
+/* @media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+
+    nav .navbar-links {
+        flex-direction: row;
+        gap: 1rem;
+        line-height: 1.5;
+    }
+} */
+
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .navbar-links {
+        justify-content: center; /* NEW */
+        width: 100%;             /* ensures proper centering */
+    }
+}
+
+/* MAIN */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+/* FOOTER */
+footer {
+    background-color: #D8FEAB;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* OPENING PAGE */
+.opening-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.enter-buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.enter-button {
+    background-color: #D8FEAB;
+    height: 12rem;
+    width: 12rem;
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.enter-buttons img {
+    width: 12rem;
+}
+
+/* MOBILE: stack vertically */
+@media (max-width: 600px) {
+    .enter-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* JOIN PAGE */
+form {
+
+    input {
+        font-family: "BBH Hegarty";
+        font-size: 20px;
+        height: 3rem;
+        width: 20rem;
+    }
+
+    button {
+        font-family: "BBH Hegarty";
+        font-size: 16px;
+        height: 3rem;
+        width: 8rem;
+    }
+}
+
+.invalid-join {
+    color: red;
+}
+
+/* BALL PAGE */
+.session-header {}
+
+.ball-main {
+    display: flex;
+    gap: 5rem;
+    padding: 1rem;
+}
+
+.ball-section {
+    button {
+        font-family: "BBH Hegarty";
+        font-size: 16px;
+        height: 3rem;
+        width: 8rem;
+    }
+}
+
+.ball {
+    background-color: #0C2174;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+    height: 20rem;
+    width: 20rem;
+    border-radius: 50rem;
+}
+
+.previous-numbers {
+    h4 {
+        font-size: 20px;
+    }
+
+    .numbers {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 20rem;
+        padding: 1rem;
+        border: 2px solid black;
+    }
+}
+
+#check-button {
+    font-family: "BBH Hegarty";
+    font-size: 16px;
+    height: 3rem;
+    width: 8rem;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30rem;
+}
+
+@media (max-width: 600px) {
+    .ball-main {
+        display: block;
+        text-align: center; /* centers inline-block children */
+    }
+
+    .ball {
+        margin: 0 auto;     /* centers the ball as a block */
+    }
+}
+
+/* BOARD PAGE */
+.bingo-board {
+    background-color: #1BE7FF;
+    padding: 0 2rem 2rem 2rem;
+    border: 2px solid black;
+
+    th {
+        font-size: 36px;
+        padding: 1rem;
+    }
+
+    td {
+        position: relative;
+        cursor: pointer;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 30px;
+        height: 6rem;
+        width: 6rem;
+        border: 2px solid black;
+    }
+}
+
+/* Default state */
+.not-selected {
+    background-color: white;
+}
+
+/* Selected state */
+.selected {
+    background-color: white;
+}
+
+/* Red circle overlay */
+.selected::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4rem;
+    height: 4rem;
+    background-color: #F35350;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    opacity: 0.85;
+}
+
+.game-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 30px;
+
+    line-height: 1;      /* tight text */
+    margin: 0;           /* remove extra outer spacing */
+    padding: 0;          /* ensure no internal padding */
+}
+
+#bingo-button {
+    font-family: "BBH Hegarty";
+    font-size: 20px;
+    height: 3rem;
+    width: 8rem;
+}
+
+/* Bingo Board Pop Up */
+/* Popup background overlay */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999; /* Highest layer */
+}
+
+/* Popup box */
+.popup-content {
+  background: white;
+  padding: 40px;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+
+  z-index: 10000; /* Ensures content is above the dark overlay */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  font-size: 1.2rem;
+}
+
+.popup-content h2 {
+    font-size: 36px;
+}
+
+.popup-content p {
+    font-size: 26px;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 10001;
+}
+
+@media (max-width: 600px) {
+    .bingo-board {
+        padding: 0 1rem 1rem 1rem;
+    }
+
+    .bingo-board th {
+        font-size: 22px;
+        padding: 0.5rem;
+    }
+
+    .bingo-board td {
+        font-size: 20px;
+        height: 3.5rem;
+        width: 3.5rem;
+    }
+
+    .selected::after {
+        width: 2.2rem;
+        height: 2.2rem;
+    }
+
+    .game-details {
+        display: block;
+       /* flex-wrap: wrap;        allows wrapping */
+        justify-content: center;
+        align-items: center;
+
+        font-size: 22px;
+        /* line-height: 1;
+        gap: 0.1rem;            /* tiny spacing between wrapped lines */
+        margin: 0;
+        padding: 0; */
+    }
+
+    .game-details h6 {
+        margin: 1rem;
+        padding: 0;
+        line-height: 1;
+        text-align: center; */
+    }
+
+    #bingo-button {
+        width: 7rem;
+        font-size: 18px;
+    }
+}
