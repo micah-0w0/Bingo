@@ -1,7 +1,8 @@
 # Bingo Game — CS50 Final Project
 **Video Demo: https://youtu.be/I6oPhlRx0zg**
+
 A web‑based Bingo game runner built with Flask
-g
+
 #### Overview
 This project is a fully interactive **Bingo game runner** built using **Flask**, designed to simulate the experience of hosting and playing a live Bingo game through the browser. The application handles number generation, game state management, and player interaction, providing a clean and responsive interface for both hosts and participants.
 
@@ -32,7 +33,7 @@ First, the user can choose to start a new game or join a running game. A new gam
 5. Visit the URL that Flask outputs.
 
 #### File Structure
-README.md
+README.md<br>
 bingo/
 ├── requirements.txt
 ├── bingo.py (This is where all of the main Flask functionality lies.)
