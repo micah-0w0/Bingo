@@ -1,4 +1,4 @@
-# Bingo Game — CS50 Final Project
+# Bingo Game
 **Video Demo: https://youtu.be/I6oPhlRx0zg**
 
 A web‑based Bingo game runner built with Flask
@@ -19,7 +19,7 @@ The goal of this project is to demonstrate practical web development skills usin
 - **Lightweight, modular design** that’s easy to extend
 
 #### Motivation
-For my CS50 final project, I wanted to build something that blends logic, UI design, and real‑time interaction. A Bingo runner is simple enough to implement cleanly, but flexible enough to expand with features like multiple bingo game modes or text to speech number calling.
+I wanted to build something that blends logic, UI design, and real‑time interaction. A Bingo runner is simple enough to implement cleanly, but flexible enough to expand with features like multiple bingo game modes or text to speech number calling.
 
 #### How It Works
 First, the user can choose to start a new game or join a running game. A new game is created and added to the games table in bingo.db. The game host gains control of a ball and can press a button to roll new bingo numbers. Bingo numbers are updated in the called_numbers table of the bingo database and on the side of the screen labeled "Previous Numbers". After the player joins a running game, a board is generated for them and stored within the boards table in bingo.db. The player clicks numbers on their board to score and can press a button that shows their game details when they have bingo. After, the game host can enter the player's game details which will verify that they won bingo.
